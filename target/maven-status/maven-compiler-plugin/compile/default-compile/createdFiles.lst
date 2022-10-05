@@ -1,0 +1,14 @@
+com/masterfullstack/app/springbootwebapp/service/PuntuacionService.class
+com/masterfullstack/app/springbootwebapp/config/SwaggerConfig.class
+com/masterfullstack/app/springbootwebapp/service/dto/ProductoDto.class
+com/masterfullstack/app/springbootwebapp/repository/PuntuacionRepository.class
+com/masterfullstack/app/springbootwebapp/controllers/ProductoController.class
+com/masterfullstack/app/springbootwebapp/repository/ProductoRepository.class
+com/masterfullstack/app/springbootwebapp/service/CategoriaService.class
+com/masterfullstack/app/springbootwebapp/repository/CategoriaRepository.class
+com/masterfullstack/app/springbootwebapp/models/entity/Producto.class
+com/masterfullstack/app/springbootwebapp/SpringBootWebAppApplication.class
+com/masterfullstack/app/springbootwebapp/mapper/ProductoInDTOtoProducto.class
+com/masterfullstack/app/springbootwebapp/models/entity/Puntuacion.class
+com/masterfullstack/app/springbootwebapp/models/entity/Categoria.class
+com/masterfullstack/app/springbootwebapp/service/ProductoService.class
