@@ -1,0 +1,1 @@
+INSERT INTO productos (fecha_creacion,id_puntuacion,id_user,nombre,precio) VALUES ('2022-01-01',1,1,'Tarro',22990)
