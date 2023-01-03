@@ -23,6 +23,10 @@ public class ProductoController {
     public List<Producto> getAllProducts(){
         return this.productoService.findAll();
     }
+    @GetMapping("/categorys")
+    public List<Producto> getAllProductoWithCategory(){
+        return this.productoService.findAllWithCategory();
+    }
     @GetMapping("/{id}")
     public Optional<Producto> getProductByID(@PathVariable Long id){
         return this.productoService.getProductoPorID(id);

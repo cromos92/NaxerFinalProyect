@@ -11,9 +11,9 @@ public class ProductoInDTOtoProducto implements IMapper<ProductoDto, Producto> {
     @Override
     public Producto map(ProductoDto in){
         Producto producto = new Producto();
-        producto.setIdPuntuacion(in.getIdPuntuacion());
-        producto.setIdUser(in.getIdUser());
+
         producto.setUrlImage(in.getUrlImage());
+        producto.setDescripcion(in.getDescripcion());
         producto.setNombre(in.getNombre());
         producto.setPrecio(in.getPrecio());
         producto.setFechaCreacion(LocalDateTime.now());

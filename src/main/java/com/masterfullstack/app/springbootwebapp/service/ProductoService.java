@@ -4,6 +4,7 @@ import com.masterfullstack.app.springbootwebapp.mapper.ProductoInDTOtoProducto;
 import com.masterfullstack.app.springbootwebapp.models.entity.Producto;
 import com.masterfullstack.app.springbootwebapp.repository.ProductoRepository;
 import com.masterfullstack.app.springbootwebapp.service.dto.ProductoDto;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +28,14 @@ public class ProductoService {
 
  public List<Producto> findAll(){
         return this.productoRepository.findAll();
+ }
+
+    /**
+     * @return
+     */
+ public List<Producto>findAllWithCategory(){
+
+     return this.productoRepository.findAllWithCategory();
  }
 public Optional<Producto> getProductoPorID(Long id){
         return this.productoRepository.findById(id);

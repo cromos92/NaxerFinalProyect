@@ -12,7 +12,20 @@ public class Producto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String urlImage;
+    private String nombre;
+    private Double precio;
+    private String descripcion;
+    private Integer idCategoria;
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+    public String getDescripcion() {
+        return descripcion;
+    }
     public Long getId() {
         return id;
     }
@@ -20,23 +33,6 @@ public class Producto implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Long getIdPuntuacion() {
-        return idPuntuacion;
-    }
-
-    public void setIdPuntuacion(Long idPuntuacion) {
-        this.idPuntuacion = idPuntuacion;
-    }
-
-    public Long getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
-    }
-
     public String getUrlImage() {
         return urlImage;
     }
@@ -52,6 +48,9 @@ public class Producto implements Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public Double getPrecio() {
         return precio;
@@ -60,15 +59,6 @@ public class Producto implements Serializable {
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
-
-
-
-    private Long idPuntuacion;
-    private Long idUser;
-    private String urlImage;
-    private String nombre;
-    private Double precio;
-
     public LocalDateTime getFechaCreacion() {
         return fechaCreacion;
     }
@@ -76,6 +66,12 @@ public class Producto implements Serializable {
     public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
+
+
+
+
+
+
 
     private LocalDateTime fechaCreacion;
 
