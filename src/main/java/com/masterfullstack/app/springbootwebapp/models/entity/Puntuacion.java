@@ -52,7 +52,7 @@ public class Puntuacion implements Serializable {
     private Double nivelPrecio;
     private Double nivelCalidad;
     private Double nivelDiseno;
-
+    private String comentario;
     public String getComentario() {
         return comentario;
     }
@@ -61,7 +61,7 @@ public class Puntuacion implements Serializable {
         this.comentario = comentario;
     }
 
-    private String comentario;
+
     @ManyToOne( )
     @JoinColumn(name = "idProducto", referencedColumnName = "id")
     Producto producto;
