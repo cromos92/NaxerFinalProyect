@@ -2,6 +2,7 @@ package com.masterfullstack.app.springbootwebapp.models.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "puntuacion")
@@ -38,21 +39,26 @@ public class Puntuacion implements Serializable {
         this.nivelDiseno = nivelDiseno;
     }
 
-    public Producto getProducto() {
-        return producto;
-    }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private Double nivelPrecio;
     private Double nivelCalidad;
     private Double nivelDiseno;
     private String comentario;
+
+    public Long getId_producto() {
+        return id_producto;
+    }
+
+    public void setId_producto(Long id_producto) {
+        this.id_producto = id_producto;
+    }
+
+    private Long id_producto;
     public String getComentario() {
         return comentario;
     }
@@ -62,7 +68,9 @@ public class Puntuacion implements Serializable {
     }
 
 
-    @ManyToOne( )
-    @JoinColumn(name = "idProducto", referencedColumnName = "id")
-    Producto producto;
+
+
+  //  @ManyToOne
+  //  @JoinColumn(name = "producto_id", insertable = false )
+   // private Producto producto;
 }

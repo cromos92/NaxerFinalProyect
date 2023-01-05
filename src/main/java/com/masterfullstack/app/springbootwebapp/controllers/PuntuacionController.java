@@ -15,7 +15,10 @@ public class PuntuacionController {
     public PuntuacionController(PuntuacionService puntuacionService) {
         this.puntuacionService = puntuacionService;
     }
-
+    @GetMapping( )
+    public  List<Puntuacion> getAllPuntuacion( ){
+        return this.puntuacionService.findAll();
+    }
     @GetMapping("/{id}")
     public  List<Puntuacion> getAllPuntuacionPorID(@PathVariable Long id){
         return this.puntuacionService.findPuntuacionWithIdProducto(id);
@@ -23,7 +26,7 @@ public class PuntuacionController {
 
     @PostMapping()
     public Puntuacion crearPuntuacion(@RequestBody Puntuacion puntuacion){
-
+        System.out.println(puntuacion);
         return this.puntuacionService.crearPuntuacion(puntuacion);
     }
 
