@@ -15,18 +15,23 @@ public class UserService {
         this.passwordEncoder = new BCryptPasswordEncoder();
 
     }
-    public String findUserByCredenciales(String email, String password) {
+    public Boolean findUserByCredenciales(String email, String password) {
 
         String emailUser = this.userRepository.findUserEmailByEmail(email );
+        System.out.println("emailuser "+emailUser);
         if(emailUser==null){
-            return "error";
+            System.out.println(  "email no existe");
+            return false;
         }else{
             String passwordHash =this.userRepository.findUserPasswordByEmail(email);
-
+            System.out.println(  "passwordhashed "+passwordHash);
             if (passwordEncoder.matches(password,passwordHash)){
-                return "ok";
+
+                System.out.println(  "clave Coincide "+passwordHash);
+                return true;
             }else{
-                return "error";
+                System.out.println(  "clave NO Coincide ");
+                return false;
             }
         }
 
@@ -34,13 +39,14 @@ public class UserService {
 
     public Boolean crearUsuario(User user) {
     String encodedPassword = this.passwordEncoder.encode(user.getPassword());
-
+        user.setPassword(encodedPassword);
+        System.out.println(this.userRepository.findUserEmailByEmail(user.getEmail()));
     if( this.userRepository.findUserEmailByEmail(user.getEmail())==null){
-        return false;
-    }else{
         user.setPassword(encodedPassword);
         this.userRepository.save(user);
-        return true ;
+        return true;
+    }else{
+        return false ;
     }
 
     }

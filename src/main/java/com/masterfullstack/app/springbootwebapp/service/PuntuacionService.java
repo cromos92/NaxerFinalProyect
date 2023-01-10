@@ -20,7 +20,9 @@ public class PuntuacionService {
 
         return this.puntuacionRepository.findPuntuacionWithIdProducto(id);
     }
-
+    public List<String> findPuntuacionPromedioPorID(long id){
+        return this.puntuacionRepository.findPuntuacionPromedioPorID(id);
+    }
     public List<Puntuacion> findAll() {
         return this.puntuacionRepository.findAll();
     }

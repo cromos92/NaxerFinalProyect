@@ -23,7 +23,11 @@ public class PuntuacionController {
     public  List<Puntuacion> getAllPuntuacionPorID(@PathVariable Long id){
         return this.puntuacionService.findPuntuacionWithIdProducto(id);
     }
+    @GetMapping("/promedio/{id}")
+    public  List<String> getPuntuacionPromedioPorID(@PathVariable Long id){
 
+        return this.puntuacionService.findPuntuacionPromedioPorID(id);
+    }
     @PostMapping()
     public Puntuacion crearPuntuacion(@RequestBody Puntuacion puntuacion){
         System.out.println(puntuacion);

@@ -17,12 +17,11 @@ public class UserController {
     @PostMapping()
     public Boolean createUser(@RequestBody User user){
 
-        this.userService.crearUsuario(user);
 
-       return true;
+       return     this.userService.crearUsuario(user);
     }
     @PostMapping("/searchUser")
-    public String findUserByCredenciales(@RequestBody User user){
+    public Boolean findUserByCredenciales(@RequestBody User user){
         System.out.println(user);
         return this.userService.findUserByCredenciales(  user.getEmail(), user.getPassword());
     }
