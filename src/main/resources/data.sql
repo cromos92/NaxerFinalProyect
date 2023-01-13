@@ -1,0 +1,1 @@
+insert into bus (mac,route) values (2,2)
