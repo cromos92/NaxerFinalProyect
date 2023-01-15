@@ -37,6 +37,10 @@ public class ProductoService {
 
      return this.productoRepository.findAllWithCategory();
  }
+ public Boolean eliminarProductoPorID(Long id){
+     this.productoRepository.deleteById(id);
+     return true ;
+ }
 public Optional<Producto> getProductoPorID(Long id){
         return this.productoRepository.findById(id);
 }

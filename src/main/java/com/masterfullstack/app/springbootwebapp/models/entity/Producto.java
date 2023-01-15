@@ -10,7 +10,7 @@ import java.util.List;
 @Table(name = "productos")
 public class Producto implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String urlImage;
     private String nombre;

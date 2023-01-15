@@ -3,6 +3,7 @@ package com.masterfullstack.app.springbootwebapp.controllers;
 import com.masterfullstack.app.springbootwebapp.models.entity.Producto;
 import com.masterfullstack.app.springbootwebapp.service.ProductoService;
 import com.masterfullstack.app.springbootwebapp.service.dto.ProductoDto;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+
 @RequestMapping("/products")
 public class ProductoController {
 
@@ -20,7 +22,7 @@ public class ProductoController {
     }
 
     @GetMapping()
-    public List<Producto> getAllProducts(){
+    public List<Producto> ObtenerTodosLosProductos(){
         return this.productoService.findAll();
     }
     @GetMapping("/categorys")
@@ -28,17 +30,19 @@ public class ProductoController {
         return this.productoService.findAllWithCategory();
     }
     @GetMapping("/{id}")
-    public Optional<Producto> getProductByID(@PathVariable Long id){
+    public Optional<Producto> ObtenerProductoPorID(@PathVariable Long id){
         return this.productoService.getProductoPorID(id);
     }
+
+
     @PostMapping()
-    public Producto createProduct(@RequestBody ProductoDto productoInDto){
+    public Producto CrearProducto(@RequestBody ProductoDto productoInDto){
 
         return this.productoService.crearProducto(productoInDto);
     }
-    @DeleteMapping("/{id}")
-    public String deleteByID(Long id){
-        return this.productoService.deleteById(id);
+    @DeleteMapping("/delete/{id}")
+    public Boolean EliminarProductoPorID(@PathVariable Long id){
+        return this.productoService.eliminarProductoPorID(id);
     }
 
 }
