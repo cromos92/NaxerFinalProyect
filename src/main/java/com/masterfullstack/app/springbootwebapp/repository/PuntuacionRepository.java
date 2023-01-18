@@ -12,12 +12,10 @@ import java.util.List;
 @Transactional
 @Repository
 public interface PuntuacionRepository extends JpaRepository<Puntuacion,Long> {
-
     @Query(
             value = "SELECT *  FROM puntuacion p where p.id_producto = :#{#id} ",
             nativeQuery = true)
     List<Puntuacion> findPuntuacionWithIdProducto(@Param("id") Long id);
-
     @Query(
             value = "SELECT  avg( p.nivel_calidad) as promedioCalidad,\n" +
                     "avg( p.nivel_precio) as promedioPrecio,\n" +
@@ -25,8 +23,6 @@ public interface PuntuacionRepository extends JpaRepository<Puntuacion,Long> {
                     "from  puntuacion as p WHERE p.id_producto=?1",nativeQuery = true
     )
     List<String> findPuntuacionPromedioPorID(Long id);
-
-
     @Modifying
     @Query(
           value = "DELETE FROM puntuacion punt WHERE punt.id_producto = ?1",nativeQuery = true

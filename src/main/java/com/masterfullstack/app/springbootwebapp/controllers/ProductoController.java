@@ -14,13 +14,10 @@ import java.util.Optional;
 
 @RequestMapping("/products")
 public class ProductoController {
-
     private  final ProductoService productoService;
-
     public ProductoController(ProductoService productoService) {
         this.productoService = productoService;
     }
-
     @GetMapping()
     public List<Producto> ObtenerTodosLosProductos(){
         return this.productoService.findAll();
@@ -33,11 +30,8 @@ public class ProductoController {
     public Optional<Producto> ObtenerProductoPorID(@PathVariable Long id){
         return this.productoService.getProductoPorID(id);
     }
-
-
     @PostMapping()
     public Producto CrearProducto(@RequestBody ProductoDto productoInDto){
-
         return this.productoService.crearProducto(productoInDto);
     }
     @DeleteMapping("/delete/{id}")

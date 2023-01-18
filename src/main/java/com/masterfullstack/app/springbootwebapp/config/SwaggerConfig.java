@@ -31,9 +31,9 @@ private ApiInfo apiInfo(){
             "Utilizacion Api Rest",
             "V1",
             "Terms of Service",
-            new Contact("Javier Araya","api URL","www.naxer.es"),"jav.teb@gmail.com","licence Api",
+            new Contact("Javier Araya","api URL","www.naxer.es"),
+            "jav.teb@gmail.com","licence Api",
                      Collections.emptyList());
 
 }
-
 }

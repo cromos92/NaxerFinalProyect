@@ -12,27 +12,19 @@ import java.util.Optional;
 
 @Service
 public class ProductoService {
-
     private final ProductoRepository productoRepository;
     private final ProductoInDTOtoProducto mapper;
-
     public ProductoService(ProductoRepository productoRepository, ProductoInDTOtoProducto mapper) {
         this.productoRepository = productoRepository;
         this.mapper = mapper;
     }
-
     public Producto crearProducto(ProductoDto productoInDto) {
         Producto producto = mapper.map(productoInDto);
         return this.productoRepository.save(producto);
     }
-
  public List<Producto> findAll(){
         return this.productoRepository.findAll();
  }
-
-    /**
-     * @return
-     */
  public List<Producto>findAllWithCategory(){
 
      return this.productoRepository.findAllWithCategory();
@@ -52,5 +44,4 @@ public String deleteById(Long id){
     this.productoRepository.deleteById(id);
         return "Producto Eliminado Correctamente";
 }
-
 }
